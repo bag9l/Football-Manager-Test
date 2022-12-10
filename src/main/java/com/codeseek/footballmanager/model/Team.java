@@ -1,18 +1,17 @@
 package com.codeseek.footballmanager.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Table(name = "`team`")
 @Entity
 public class Team {
@@ -23,7 +22,7 @@ public class Team {
     private String name;
 
     //0-10
-    private byte commission;
+    private Byte commission;
 
     @Column(name = "`cash account`")
     private BigDecimal cashAccount;
@@ -39,5 +38,28 @@ public class Team {
                     a.setTeam(this));
         }
         this.teamMembers = teamMembers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Team)) return false;
+        Team team = (Team) o;
+        return id.equals(team.id)
+                && name.equals(team.name)
+                && Objects.equals(commission, team.commission)
+                && Objects.equals(cashAccount, team.cashAccount)
+                && Objects.equals(teamMembers, team.teamMembers);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(
+                id,
+                name,
+                commission,
+                cashAccount,
+                teamMembers
+        );
     }
 }
