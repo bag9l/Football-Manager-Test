@@ -2,6 +2,7 @@ package com.codeseek.footballmanager.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -17,6 +18,8 @@ import java.util.Objects;
 public class FootballPlayer {
 
     @Id
+    @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String id;
 
     private String firstname;
