@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Objects;
 
 @Getter
@@ -25,6 +26,9 @@ public class FootballPlayer {
     @Column(name = "`date of birth`")
     private LocalDate dateOfBirth;
 
+    @Transient
+    private Integer age;
+
     @Column(name = "`date of becoming professional football player`")
     private LocalDate dateOfBecomingProfessionalFootballPlayer;
 
@@ -33,6 +37,24 @@ public class FootballPlayer {
     })
     @JoinColumn(name = "team_id")
     private Team team;
+
+    public FootballPlayer(String id,
+                          String firstname,
+                          String lastname,
+                          LocalDate dateOfBirth,
+                          LocalDate dateOfBecomingProfessionalFootballPlayer,
+                          Team team) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.dateOfBirth = dateOfBirth;
+        this.dateOfBecomingProfessionalFootballPlayer = dateOfBecomingProfessionalFootballPlayer;
+        this.team = team;
+    }
+
+    public Integer getAge() {
+        return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
+    }
 
     @Override
     public boolean equals(Object o) {
