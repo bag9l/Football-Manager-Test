@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Add team1",
+			"name": "Create team1",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -36,7 +36,7 @@
 			"response": []
 		},
 		{
-			"name": "Add team2",
+			"name": "Create team2",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -64,7 +64,7 @@
 			"response": []
 		},
 		{
-			"name": "Add player",
+			"name": "Create player",
 			"request": {
 				"method": "POST",
 				"header": [],
