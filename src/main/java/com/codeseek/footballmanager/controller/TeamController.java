@@ -1,5 +1,8 @@
 package com.codeseek.footballmanager.controller;
 
+import com.codeseek.footballmanager.dto.FootballPlayerDTO;
+import com.codeseek.footballmanager.dto.TeamDTO;
+import com.codeseek.footballmanager.model.FootballPlayer;
 import com.codeseek.footballmanager.model.Team;
 import com.codeseek.footballmanager.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +34,10 @@ public class TeamController {
     @GetMapping("team/{id}")
     public Team getTeam(@PathVariable("id") String id){
         return teamService.getTeamById(id);
+    }
+
+    @PutMapping("team/{id}")
+    public Team updateTeam(@RequestBody TeamDTO teamDTO, @PathVariable("id") String id){
+        return teamService.updateTeam(teamDTO, id);
     }
 }

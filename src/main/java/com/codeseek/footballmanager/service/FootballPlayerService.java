@@ -33,11 +33,7 @@ public class FootballPlayerService {
         FootballPlayer footballPlayer = new FootballPlayer();
         BeanUtils.copyProperties(dto, footballPlayer);
 
-        footballPlayer.setTeam(
-                teamRepository.findById(dto.getTeamId())
-                        .orElseThrow(() ->
-                                new IllegalStateException("Team with id:" + dto.getTeamId() + " not found"))
-        );
+        footballPlayer.setTeam(getTeamById(dto.getTeamId()));
 
         return footballPlayerRepository.save(footballPlayer);
     }
@@ -45,5 +41,22 @@ public class FootballPlayerService {
     public FootballPlayer getFootballPlayerById(String id) {
         return footballPlayerRepository.findById(id).orElseThrow(()->
                 new IllegalStateException("Football player with id:" + id + " not found"));
+    }
+
+    public FootballPlayer updateFootballPlayer(FootballPlayerDTO footballPlayerDTO, String id) {
+        return footballPlayerRepository.findById(id)
+                .map(footballPlayer ->{
+                    BeanUtils.copyProperties(footballPlayerDTO, footballPlayer);
+                    footballPlayer.setId(id);
+                    footballPlayer.setTeam(getTeamById(footballPlayerDTO.getTeamId()));
+                    return footballPlayerRepository.save(footballPlayer);
+                }).orElseThrow(()->
+                        new IllegalStateException("Football player is not exists"));
+    }
+
+    private Team getTeamById(String id){
+    return  teamRepository.findById(id)
+        .orElseThrow(() ->
+                new IllegalStateException("Team with id:" + id + " not found"));
     }
 }

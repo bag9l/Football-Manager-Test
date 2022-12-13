@@ -33,4 +33,9 @@ public class FootballPlayerController {
     public FootballPlayer getTeam(@PathVariable("id") String id){
         return footballPlayerService.getFootballPlayerById(id);
     }
+
+    @PutMapping("player/{id}")
+    public FootballPlayer updateFootballPlayer(@RequestBody FootballPlayerDTO footballPlayerDTO, @PathVariable("id") String id){
+        return footballPlayerService.updateFootballPlayer(footballPlayerDTO, id);
+    }
 }
