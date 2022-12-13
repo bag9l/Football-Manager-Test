@@ -1,0 +1,309 @@
+{
+	"info": {
+		"_postman_id": "5d1187e0-3473-444e-aeb7-4dd5c300abd9",
+		"name": "Football Manager Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22698579"
+	},
+	"item": [
+		{
+			"name": "Add team1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"team1\",\r\n    \"commission\": 10,\r\n    \"cashAccount\": 80000000.0,\r\n    \"teamMembers\":[\r\n        {\r\n            \"firstname\": \"T1firstname1\",\r\n            \"lastname\": \"T1lastname1\",\r\n            \"dateOfBirth\": \"1981-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2019-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T1firstname2\",\r\n            \"lastname\": \"T1lastname2\",\r\n            \"dateOfBirth\": \"1985-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2010-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T2firstname3\",\r\n            \"lastname\": \"T2lastname3\",\r\n            \"dateOfBirth\": \"1983-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2015-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T1firstname4\",\r\n            \"lastname\": \"T1lastname4\",\r\n            \"dateOfBirth\": \"1988-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2013-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T1firstname5\",\r\n            \"lastname\": \"T1lastname5\",\r\n            \"dateOfBirth\": \"1987-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2012-05-10\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/teams/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add team2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"team2\",\r\n    \"commission\": 10,\r\n    \"cashAccount\": 80000000.0,\r\n    \"teamMembers\":[\r\n        {\r\n            \"firstname\": \"T2firstname1\",\r\n            \"lastname\": \"T2lastname1\",\r\n            \"dateOfBirth\": \"1981-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2019-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T2firstname2\",\r\n            \"lastname\": \"T2lastname2\",\r\n            \"dateOfBirth\": \"1985-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2010-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T2firstname3\",\r\n            \"lastname\": \"T2lastname3\",\r\n            \"dateOfBirth\": \"1983-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2015-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T2firstname4\",\r\n            \"lastname\": \"T2lastname4\",\r\n            \"dateOfBirth\": \"1988-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2013-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T2firstname5\",\r\n            \"lastname\": \"T2lastname5\",\r\n            \"dateOfBirth\": \"1987-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2012-05-10\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/team",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"team"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add player",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"firstname\": \"Leonel\",\r\n    \"lastname\": \"Messi\",\r\n    \"dateOfBirth\": \"1995-03-07\",\r\n    \"dateOfBecomingProfessionalFootballPlayer\": \"2010-05-10\",\r\n    \"teamId\": \"402880ed8509bfc5018509c02f480006\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/footballPlayers/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"footballPlayers",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get teams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/teams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get players",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/players",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"players"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find team",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/team/402880ed8509bfc5018509bff3060000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"team",
+						"402880ed8509bfc5018509bff3060000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find football player",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/footballPlayers/402880ed850a71e301850a72324b0000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"footballPlayers",
+						"402880ed850a71e301850a72324b0000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update football player",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"firstname\": \"Vadym\",\r\n    \"lastname\": \"Liashok\",\r\n    \"dateOfBirth\": \"2003-05-07\",\r\n    \"dateOfBecomingProfessionalFootballPlayer\": \"2015-05-10\",\r\n    \"teamId\": \"402880ed8509bfc5018509c02f480006\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/player/402880ed850a71e301850a72324b0000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"402880ed850a71e301850a72324b0000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update team",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Barcelona\",\r\n    \"commission\": 10,\r\n    \"cashAccount\": 80000000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/teams/402880ed8509bfc5018509c02f480006",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						"402880ed8509bfc5018509c02f480006"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete football player",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/footballPlayers/402880ed8509fd7c018509ff73b00001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"footballPlayers",
+						"402880ed8509fd7c018509ff73b00001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete team",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/teams/402880ed8509bfc5018509c02f480006",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						"402880ed8509bfc5018509c02f480006"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buy football player",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"footballPlayerId\": \"402880ed8509bfc5018509bff31d0005\",\r\n    \"salesTeamId\": \"402880ed8509bfc5018509bff3060000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/teams/402880ed8509bfc5018509c02f480006/buyFootballPlayer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						"402880ed8509bfc5018509c02f480006",
+						"buyFootballPlayer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
