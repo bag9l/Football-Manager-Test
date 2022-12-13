@@ -1,12 +1,11 @@
 package com.codeseek.footballmanager.controller;
 
+import com.codeseek.footballmanager.dto.FootballPlayerDTO;
 import com.codeseek.footballmanager.model.FootballPlayer;
+import com.codeseek.footballmanager.model.Team;
 import com.codeseek.footballmanager.service.FootballPlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,7 +25,12 @@ public class FootballPlayerController {
     }
 
     @PostMapping("player")
-    public FootballPlayer addFootballPlayer(@RequestBody FootballPlayer footballPlayer){
-        return footballPlayerService.addFootballPlayer(footballPlayer);
+    public FootballPlayer addFootballPlayer(@RequestBody FootballPlayerDTO dto){
+        return footballPlayerService.addFootballPlayer(dto);
+    }
+
+    @GetMapping("player/{id}")
+    public FootballPlayer getTeam(@PathVariable("id") String id){
+        return footballPlayerService.getFootballPlayerById(id);
     }
 }

@@ -1,7 +1,11 @@
 package com.codeseek.footballmanager.service;
 
+import com.codeseek.footballmanager.dto.FootballPlayerDTO;
 import com.codeseek.footballmanager.model.FootballPlayer;
+import com.codeseek.footballmanager.model.Team;
 import com.codeseek.footballmanager.repository.FootballPlayerRepository;
+import com.codeseek.footballmanager.repository.TeamRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,17 +16,34 @@ public class FootballPlayerService {
 
     private final FootballPlayerRepository footballPlayerRepository;
 
+    private final TeamRepository teamRepository;
+
     @Autowired
-    public FootballPlayerService(FootballPlayerRepository footballPlayerRepository) {
+    public FootballPlayerService(FootballPlayerRepository footballPlayerRepository, TeamRepository teamRepository) {
         this.footballPlayerRepository = footballPlayerRepository;
+        this.teamRepository = teamRepository;
     }
 
-    public List<FootballPlayer> getAllFootballPlayers(){
+    public List<FootballPlayer> getAllFootballPlayers() {
         return footballPlayerRepository.findAll();
     }
 
 
-    public FootballPlayer addFootballPlayer(FootballPlayer footballPlayer) {
+    public FootballPlayer addFootballPlayer(FootballPlayerDTO dto) {
+        FootballPlayer footballPlayer = new FootballPlayer();
+        BeanUtils.copyProperties(dto, footballPlayer);
+
+        footballPlayer.setTeam(
+                teamRepository.findById(dto.getTeamId())
+                        .orElseThrow(() ->
+                                new IllegalStateException("Team with id:" + dto.getTeamId() + " not found"))
+        );
+
         return footballPlayerRepository.save(footballPlayer);
+    }
+
+    public FootballPlayer getFootballPlayerById(String id) {
+        return footballPlayerRepository.findById(id).orElseThrow(()->
+                new IllegalStateException("Football player with id:" + id + " not found"));
     }
 }

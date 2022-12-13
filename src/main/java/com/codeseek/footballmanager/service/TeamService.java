@@ -24,4 +24,9 @@ public class TeamService {
     public Team addTeam(Team team) {
         return teamRepository.save(team);
     }
+
+    public Team getTeamById(String id) {
+        return teamRepository.findById(id).orElseThrow(()->
+                new IllegalStateException("Team with id:" + id + " not found"));
+    }
 }

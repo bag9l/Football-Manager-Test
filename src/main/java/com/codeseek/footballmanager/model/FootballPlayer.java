@@ -51,7 +51,6 @@ public class FootballPlayer {
         this.lastname = lastname;
         this.dateOfBirth = dateOfBirth;
         this.dateOfBecomingProfessionalFootballPlayer = dateOfBecomingProfessionalFootballPlayer;
-        this.team = team;
     }
 
     public Integer getAge() {
