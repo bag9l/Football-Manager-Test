@@ -1,11 +1,11 @@
 package com.codeseek.footballmanager.controller;
 
-import com.codeseek.footballmanager.dto.FootballPlayerDTO;
 import com.codeseek.footballmanager.dto.TeamDTO;
-import com.codeseek.footballmanager.model.FootballPlayer;
 import com.codeseek.footballmanager.model.Team;
 import com.codeseek.footballmanager.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,27 +22,32 @@ public class TeamController {
     }
 
     @GetMapping("teams")
-    public List<Team> getTeams(){
-        return teamService.getAllTeams();
+    public ResponseEntity<List<Team>> getTeams() {
+        return ResponseEntity.status(HttpStatus.OK).body(
+                teamService.getAllTeams());
     }
 
     @PostMapping("team")
-    public Team addTeam(@RequestBody Team team){
-        return teamService.addTeam(team);
+    public ResponseEntity<Team> addTeam(@RequestBody Team team) {
+        return ResponseEntity.status(HttpStatus.OK).body(
+                teamService.addTeam(team));
     }
 
     @GetMapping("team/{id}")
-    public Team getTeam(@PathVariable("id") String id){
-        return teamService.getTeamById(id);
+    public ResponseEntity<Team> getTeam(@PathVariable("id") String id) {
+        return ResponseEntity.status(HttpStatus.OK).body(
+                teamService.getTeamById(id));
     }
 
     @PutMapping("team/{id}")
-    public Team updateTeam(@RequestBody TeamDTO teamDTO, @PathVariable("id") String id){
-        return teamService.updateTeam(teamDTO, id);
+    public ResponseEntity<Team> updateTeam(@RequestBody TeamDTO teamDTO, @PathVariable("id") String id) {
+        return ResponseEntity.status(HttpStatus.OK).body(
+                teamService.updateTeam(teamDTO, id));
     }
 
     @DeleteMapping("team/{id}")
-    public void deleteTeam(@PathVariable("id") String id){
+    public ResponseEntity<Void> deleteTeam(@PathVariable("id") String id) {
         teamService.deleteTeam(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 }
