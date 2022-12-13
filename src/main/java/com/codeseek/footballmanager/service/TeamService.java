@@ -43,4 +43,8 @@ public class TeamService {
                 }).orElseThrow(()->
                         new IllegalStateException("Team is not exists"));
     }
+
+    public void deleteTeam(String id) {
+        teamRepository.deleteById(id);
+    }
 }

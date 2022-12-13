@@ -38,4 +38,9 @@ public class FootballPlayerController {
     public FootballPlayer updateFootballPlayer(@RequestBody FootballPlayerDTO footballPlayerDTO, @PathVariable("id") String id){
         return footballPlayerService.updateFootballPlayer(footballPlayerDTO, id);
     }
+
+    @DeleteMapping("player/{id}")
+    public void deleteFootballPlayer(@PathVariable("id") String id){
+        footballPlayerService.deleteFootballPlayer(id);
+    }
 }

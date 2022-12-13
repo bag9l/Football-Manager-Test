@@ -59,4 +59,8 @@ public class FootballPlayerService {
         .orElseThrow(() ->
                 new IllegalStateException("Team with id:" + id + " not found"));
     }
+
+    public void deleteFootballPlayer(String id) {
+        footballPlayerRepository.deleteById(id);
+    }
 }
