@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("footballPlayers")
 public class FootballPlayerController {
 
     private final FootballPlayerService footballPlayerService;
@@ -20,32 +21,32 @@ public class FootballPlayerController {
         this.footballPlayerService = footballPlayerService;
     }
 
-    @GetMapping("players")
+    @GetMapping()
     public ResponseEntity<List<FootballPlayer>> getFootballPlayers() {
         return ResponseEntity.status(HttpStatus.OK).body(
                         footballPlayerService.getAllFootballPlayers());
     }
 
-    @PostMapping("player")
+    @PostMapping("create")
     public ResponseEntity<FootballPlayer> addFootballPlayer(@RequestBody FootballPlayerDTO dto) {
         return  ResponseEntity.status(HttpStatus.OK).body(
                 footballPlayerService.addFootballPlayer(dto));
     }
 
-    @GetMapping("player/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<FootballPlayer> getTeam(@PathVariable("id") String id) {
         return  ResponseEntity.status(HttpStatus.OK).body(
                 footballPlayerService.getFootballPlayerById(id));
     }
 
-    @PutMapping("player/{id}")
+    @PutMapping("{id}")
     public ResponseEntity<FootballPlayer> updateFootballPlayer(@RequestBody FootballPlayerDTO footballPlayerDTO,
                                                                @PathVariable("id") String id) {
         return  ResponseEntity.status(HttpStatus.OK).body(
                 footballPlayerService.updateFootballPlayer(footballPlayerDTO, id));
     }
 
-    @DeleteMapping("player/{id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteFootballPlayer(@PathVariable("id") String id) {
         footballPlayerService.deleteFootballPlayer(id);
         return ResponseEntity.status(HttpStatus.OK).build();

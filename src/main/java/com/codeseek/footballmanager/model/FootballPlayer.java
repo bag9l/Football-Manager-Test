@@ -33,6 +33,9 @@ public class FootballPlayer {
     @Transient
     private Integer age;
 
+    @Transient
+    private Integer monthsOfExperience;
+
     @Column(name = "`date of becoming professional football player`")
     private LocalDate dateOfBecomingProfessionalFootballPlayer;
 
@@ -56,6 +59,11 @@ public class FootballPlayer {
     public Integer getAge() {
         return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
     }
+
+    public Integer getMonthsOfExperience() {
+        return Period.between(this.dateOfBecomingProfessionalFootballPlayer, LocalDate.now()).getMonths();
+    }
+
 
     @Override
     public boolean equals(Object o) {
