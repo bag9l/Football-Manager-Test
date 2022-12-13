@@ -1,5 +1,6 @@
 package com.codeseek.footballmanager.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
@@ -13,7 +14,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "`football player`")
+@Table(name = "`football_player`")
 @Entity
 public class FootballPlayer {
 
@@ -35,19 +36,17 @@ public class FootballPlayer {
     @Column(name = "`date of becoming professional football player`")
     private LocalDate dateOfBecomingProfessionalFootballPlayer;
 
+    @JsonIgnore
     @ManyToOne(cascade = {
             CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH
     })
     @JoinColumn(name = "team_id")
     private Team team;
 
-    public FootballPlayer(String id,
-                          String firstname,
+    public FootballPlayer(String firstname,
                           String lastname,
                           LocalDate dateOfBirth,
-                          LocalDate dateOfBecomingProfessionalFootballPlayer,
-                          Team team) {
-        this.id = id;
+                          LocalDate dateOfBecomingProfessionalFootballPlayer) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.dateOfBirth = dateOfBirth;

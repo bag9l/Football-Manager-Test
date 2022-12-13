@@ -35,6 +35,14 @@ public class Team {
     })
     private List<FootballPlayer> teamMembers;
 
+
+    public Team(String name, Byte commission, BigDecimal cashAccount, List<FootballPlayer> teamMembers) {
+        this.name = name;
+        this.commission = commission;
+        this.cashAccount = cashAccount;
+        this.teamMembers = teamMembers;
+    }
+
     public void setTeamMembers(List<FootballPlayer> teamMembers) {
         if (teamMembers != null) {
             teamMembers.forEach(a ->
