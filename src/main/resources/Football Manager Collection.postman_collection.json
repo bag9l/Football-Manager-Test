@@ -282,7 +282,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"footballPlayerId\": \"402880ed8509bfc5018509bff31d0005\",\r\n    \"salesTeamId\": \"402880ed8509bfc5018509bff3060000\"\r\n}",
+					"raw": "{\r\n    \"footballPlayerId\": \"402880ed8509bfc5018509bff31d0004\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
