@@ -3,6 +3,7 @@ package com.codeseek.footballmanager.controller;
 import com.codeseek.footballmanager.dto.FootballPlayerDTO;
 import com.codeseek.footballmanager.model.FootballPlayer;
 import com.codeseek.footballmanager.service.FootballPlayerService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class FootballPlayerController {
     }
 
     @PostMapping("create")
-    public ResponseEntity<FootballPlayer> addFootballPlayer(@RequestBody FootballPlayerDTO dto) {
+    public ResponseEntity<FootballPlayer> addFootballPlayer(@RequestBody @Valid FootballPlayerDTO dto) {
         return  ResponseEntity.status(HttpStatus.OK).body(
                 footballPlayerService.addFootballPlayer(dto));
     }
@@ -40,7 +41,7 @@ public class FootballPlayerController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<FootballPlayer> updateFootballPlayer(@RequestBody FootballPlayerDTO footballPlayerDTO,
+    public ResponseEntity<FootballPlayer> updateFootballPlayer(@RequestBody @Valid FootballPlayerDTO footballPlayerDTO,
                                                                @PathVariable("id") String id) {
         return  ResponseEntity.status(HttpStatus.OK).body(
                 footballPlayerService.updateFootballPlayer(footballPlayerDTO, id));

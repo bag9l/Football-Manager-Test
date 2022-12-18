@@ -1,5 +1,7 @@
 package com.codeseek.footballmanager.dto;
 
+import com.codeseek.footballmanager.validator.NameConstraint;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,14 +17,18 @@ public class FootballPlayerDTO {
 
     private String id;
 
+    @NotNull
+    @NameConstraint
     private String firstname;
 
+    @NotNull
+    @NameConstraint
     private String lastname;
 
+    @NotNull
     private LocalDate dateOfBirth;
 
-    private Integer age;
-
+    @NotNull
     private LocalDate dateOfBecomingProfessionalFootballPlayer;
 
     private String teamId;

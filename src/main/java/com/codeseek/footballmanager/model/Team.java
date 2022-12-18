@@ -18,13 +18,13 @@ import java.util.Objects;
 public class Team {
 
     @Id
-    @GeneratedValue(generator="system-uuid")
-    @GenericGenerator(name="system-uuid", strategy = "uuid")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String id;
 
+    @Column(name = "`name`")
     private String name;
 
-    //0-10
     private Byte commission;
 
     @Column(name = "`cash account`")

@@ -24,7 +24,6 @@ public class FootballPlayer {
     private String id;
 
     private String firstname;
-
     private String lastname;
 
     @Column(name = "`date of birth`")
@@ -46,16 +45,6 @@ public class FootballPlayer {
     @JoinColumn(name = "team_id")
     private Team team;
 
-    public FootballPlayer(String firstname,
-                          String lastname,
-                          LocalDate dateOfBirth,
-                          LocalDate dateOfBecomingProfessionalFootballPlayer) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.dateOfBirth = dateOfBirth;
-        this.dateOfBecomingProfessionalFootballPlayer = dateOfBecomingProfessionalFootballPlayer;
-    }
-
     public Integer getAge() {
         return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
     }
@@ -63,7 +52,6 @@ public class FootballPlayer {
     public Integer getMonthsOfExperience() {
         return Math.toIntExact(Period.between(this.dateOfBecomingProfessionalFootballPlayer, LocalDate.now()).toTotalMonths());
     }
-
 
     @Override
     public boolean equals(Object o) {

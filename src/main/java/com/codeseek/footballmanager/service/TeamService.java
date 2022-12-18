@@ -33,7 +33,9 @@ public class TeamService {
         return teamRepository.findAll();
     }
 
-    public Team addTeam(Team team) {
+    public Team addTeam(TeamDTO teamDTO) {
+        Team team = new Team();
+        BeanUtils.copyProperties(teamDTO, team, "id");
         return teamRepository.save(team);
     }
 

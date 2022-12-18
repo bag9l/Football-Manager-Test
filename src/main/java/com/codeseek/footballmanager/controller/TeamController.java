@@ -4,6 +4,7 @@ import com.codeseek.footballmanager.dto.TeamDTO;
 import com.codeseek.footballmanager.dto.TransferFootballPlayerDTO;
 import com.codeseek.footballmanager.model.Team;
 import com.codeseek.footballmanager.service.TeamService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +31,7 @@ public class TeamController {
     }
 
     @PostMapping("create")
-    public ResponseEntity<Team> addTeam(@RequestBody Team team) {
+    public ResponseEntity<Team> addTeam(@RequestBody @Valid TeamDTO team) {
         return ResponseEntity.status(HttpStatus.OK).body(
                 teamService.addTeam(team));
     }
@@ -42,7 +43,7 @@ public class TeamController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Team> updateTeam(@RequestBody TeamDTO teamDTO, @PathVariable("id") String id) {
+    public ResponseEntity<Team> updateTeam(@RequestBody @Valid TeamDTO teamDTO, @PathVariable("id") String id) {
         return ResponseEntity.status(HttpStatus.OK).body(
                 teamService.updateTeam(teamDTO, id));
     }
@@ -54,7 +55,7 @@ public class TeamController {
     }
 
     @PostMapping("{id}/buyFootballPlayer")
-    public ResponseEntity<Void> buyFootballPlayer(@RequestBody TransferFootballPlayerDTO transferFootballPlayerDTO, @PathVariable("id") String id){
+    public ResponseEntity<Void> buyFootballPlayer(@RequestBody @Valid TransferFootballPlayerDTO transferFootballPlayerDTO, @PathVariable("id") String id){
         transferFootballPlayerDTO.setBuyingTeamId(id);
         teamService.buyFootballPlayer(transferFootballPlayerDTO);
         return ResponseEntity.status(HttpStatus.OK).build();

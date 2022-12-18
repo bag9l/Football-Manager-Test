@@ -46,8 +46,7 @@ public class FootballPlayerService {
     public FootballPlayer updateFootballPlayer(FootballPlayerDTO footballPlayerDTO, String id) {
         return footballPlayerRepository.findById(id)
                 .map(footballPlayer ->{
-                    BeanUtils.copyProperties(footballPlayerDTO, footballPlayer);
-                    footballPlayer.setId(id);
+                    BeanUtils.copyProperties(footballPlayerDTO, footballPlayer, "id");
                     footballPlayer.setTeam(getTeamById(footballPlayerDTO.getTeamId()));
                     return footballPlayerRepository.save(footballPlayer);
                 }).orElseThrow(()->
