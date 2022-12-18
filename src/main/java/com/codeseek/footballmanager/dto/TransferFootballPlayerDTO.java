@@ -11,5 +11,4 @@ import lombok.*;
 public class TransferFootballPlayerDTO {
     private String footballPlayerId;
     private String buyingTeamId;
-    private String salesTeamId;
 }

@@ -19,8 +19,8 @@ import java.util.Objects;
 public class FootballPlayer {
 
     @Id
-    @GeneratedValue(generator="system-uuid")
-    @GenericGenerator(name="system-uuid", strategy = "uuid")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String id;
 
     private String firstname;
@@ -61,7 +61,7 @@ public class FootballPlayer {
     }
 
     public Integer getMonthsOfExperience() {
-        return Period.between(this.dateOfBecomingProfessionalFootballPlayer, LocalDate.now()).getMonths();
+        return Math.toIntExact(Period.between(this.dateOfBecomingProfessionalFootballPlayer, LocalDate.now()).toTotalMonths());
     }
 
 
