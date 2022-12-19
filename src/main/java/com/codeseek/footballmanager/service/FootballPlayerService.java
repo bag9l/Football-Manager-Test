@@ -1,13 +1,16 @@
 package com.codeseek.footballmanager.service;
 
 import com.codeseek.footballmanager.dto.FootballPlayerDTO;
+import com.codeseek.footballmanager.helper.NullPropertyFinder;
 import com.codeseek.footballmanager.model.FootballPlayer;
 import com.codeseek.footballmanager.model.Team;
 import com.codeseek.footballmanager.repository.FootballPlayerRepository;
 import com.codeseek.footballmanager.repository.TeamRepository;
+import jakarta.persistence.PreRemove;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -46,7 +49,7 @@ public class FootballPlayerService {
     public FootballPlayer updateFootballPlayer(FootballPlayerDTO footballPlayerDTO, String id) {
         return footballPlayerRepository.findById(id)
                 .map(footballPlayer ->{
-                    BeanUtils.copyProperties(footballPlayerDTO, footballPlayer, "id");
+                    BeanUtils.copyProperties(footballPlayerDTO, footballPlayer, NullPropertyFinder.getNullPropertyNames(footballPlayerDTO));
                     footballPlayer.setTeam(getTeamById(footballPlayerDTO.getTeamId()));
                     return footballPlayerRepository.save(footballPlayer);
                 }).orElseThrow(()->
@@ -59,7 +62,15 @@ public class FootballPlayerService {
                 new IllegalStateException("Team with id:" + id + " not found"));
     }
 
+    @Transactional
     public void deleteFootballPlayer(String id) {
+        FootballPlayer footballPlayer = footballPlayerRepository.findById(id).orElseThrow(()->
+                new IllegalStateException("Football player is not exists"));
+
+        footballPlayer.setTeam(null);
+
+        footballPlayerRepository.save(footballPlayer);
+
         footballPlayerRepository.deleteById(id);
     }
 }

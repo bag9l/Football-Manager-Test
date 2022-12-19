@@ -6,6 +6,7 @@ import com.codeseek.footballmanager.model.FootballPlayer;
 import com.codeseek.footballmanager.model.Team;
 import com.codeseek.footballmanager.repository.FootballPlayerRepository;
 import com.codeseek.footballmanager.repository.TeamRepository;
+import jakarta.persistence.PreRemove;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
+
+import static com.codeseek.footballmanager.helper.NullPropertyFinder.getNullPropertyNames;
 
 @Slf4j
 @Service
@@ -35,7 +38,7 @@ public class TeamService {
 
     public Team addTeam(TeamDTO teamDTO) {
         Team team = new Team();
-        BeanUtils.copyProperties(teamDTO, team, "id");
+        BeanUtils.copyProperties(teamDTO, team, getNullPropertyNames(teamDTO));
         return teamRepository.save(team);
     }
 
@@ -47,14 +50,22 @@ public class TeamService {
     public Team updateTeam(TeamDTO teamDTO, String id) {
         return teamRepository.findById(id)
                 .map(team -> {
-                    BeanUtils.copyProperties(teamDTO, team);
-                    team.setId(id);
+                    BeanUtils.copyProperties(teamDTO, team, getNullPropertyNames(teamDTO));
                     return teamRepository.save(team);
                 }).orElseThrow(() ->
                         new IllegalStateException("Team is not exists"));
     }
 
+    @PreRemove
     public void deleteTeam(String id) {
+        Team team = teamRepository.findById(id).orElseThrow(()->
+                new IllegalStateException("Team is not exists"));
+        team.getTeamMembers().forEach((member)->{
+            member.setTeam(null);
+        });
+
+        teamRepository.save(team);
+
         teamRepository.deleteById(id);
     }
 

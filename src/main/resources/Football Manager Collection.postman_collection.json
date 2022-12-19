@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"team1\",\r\n    \"commission\": 10,\r\n    \"cashAccount\": 80000000.0,\r\n    \"teamMembers\":[\r\n        {\r\n            \"firstname\": \"T1firstname1\",\r\n            \"lastname\": \"T1lastname1\",\r\n            \"dateOfBirth\": \"1981-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2019-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T1firstname2\",\r\n            \"lastname\": \"T1lastname2\",\r\n            \"dateOfBirth\": \"1985-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2010-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T2firstname3\",\r\n            \"lastname\": \"T2lastname3\",\r\n            \"dateOfBirth\": \"1983-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2015-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T1firstname4\",\r\n            \"lastname\": \"T1lastname4\",\r\n            \"dateOfBirth\": \"1988-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2013-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T1firstname5\",\r\n            \"lastname\": \"T1lastname5\",\r\n            \"dateOfBirth\": \"1987-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2012-05-10\"\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"name\": \"Argentina\",\r\n    \"commission\": 7,\r\n    \"cashAccount\": 80000000.0,\r\n    \"teamMembers\":[\r\n        {\r\n            \"firstname\": \"ava\",\r\n            \"lastname\": \"gas\",\r\n            \"dateOfBirth\": \"1981-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2019-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"ffdh\",\r\n            \"lastname\": \"hfdf\",\r\n            \"dateOfBirth\": \"1985-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2010-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"hfhdfh\",\r\n            \"lastname\": \"fdhdfh\",\r\n            \"dateOfBirth\": \"1983-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2015-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"fdhfd\",\r\n            \"lastname\": \"dfhdh\",\r\n            \"dateOfBirth\": \"1988-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2013-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"dfhdh\",\r\n            \"lastname\": \"dhdfh\",\r\n            \"dateOfBirth\": \"1987-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2012-05-10\"\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"team2\",\r\n    \"commission\": 10,\r\n    \"cashAccount\": 80000000.0,\r\n    \"teamMembers\":[\r\n        {\r\n            \"firstname\": \"T2firstname1\",\r\n            \"lastname\": \"T2lastname1\",\r\n            \"dateOfBirth\": \"1981-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2019-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T2firstname2\",\r\n            \"lastname\": \"T2lastname2\",\r\n            \"dateOfBirth\": \"1985-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2010-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T2firstname3\",\r\n            \"lastname\": \"T2lastname3\",\r\n            \"dateOfBirth\": \"1983-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2015-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T2firstname4\",\r\n            \"lastname\": \"T2lastname4\",\r\n            \"dateOfBirth\": \"1988-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2013-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"T2firstname5\",\r\n            \"lastname\": \"T2lastname5\",\r\n            \"dateOfBirth\": \"1987-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2012-05-10\"\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"name\": \"Barcelona\",\r\n    \"commission\": 10,\r\n    \"cashAccount\": 80000000.0,\r\n    \"teamMembers\":[\r\n        {\r\n            \"firstname\": \"xzv\",\r\n            \"lastname\": \"vxvxz\",\r\n            \"dateOfBirth\": \"1981-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2019-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"zfg\",\r\n            \"lastname\": \"sdgd\",\r\n            \"dateOfBirth\": \"1985-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2010-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"sdggd\",\r\n            \"lastname\": \"dggh\",\r\n            \"dateOfBirth\": \"1983-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2015-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"sdgh\",\r\n            \"lastname\": \"safs\",\r\n            \"dateOfBirth\": \"1988-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2013-05-10\"\r\n        },\r\n         {\r\n            \"firstname\": \"sfh\",\r\n            \"lastname\": \"asff\",\r\n            \"dateOfBirth\": \"1987-03-22\",\r\n            \"dateOfBecomingProfessionalFootballPlayer\": \"2012-05-10\"\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -50,14 +50,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/team",
+					"raw": "http://localhost:8080/teams/create",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"team"
+						"teams",
+						"create"
 					]
 				}
 			},
@@ -184,7 +185,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " {\r\n    \"firstname\": \"Vadym\",\r\n    \"lastname\": \"Liashok\",\r\n    \"dateOfBirth\": \"2003-05-07\",\r\n    \"dateOfBecomingProfessionalFootballPlayer\": \"2015-05-10\",\r\n    \"teamId\": \"402880ed8509bfc5018509c02f480006\"\r\n}",
+					"raw": " {\r\n    \"firstname\": \"Cristiano\",\r\n    \"lastname\": \"Ronaldo\",\r\n    \"dateOfBirth\": \"1995-03-07\",\r\n    \"dateOfBecomingProfessionalFootballPlayer\": \"2010-05-10\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -192,15 +193,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/player/402880ed850a71e301850a72324b0000",
+					"raw": "http://localhost:8080/footballPlayers/402880ed85276a860185276b3d740001",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"player",
-						"402880ed850a71e301850a72324b0000"
+						"footballPlayers",
+						"402880ed85276a860185276b3d740001"
 					]
 				}
 			},
@@ -213,7 +214,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Barcelona\",\r\n    \"commission\": 10,\r\n    \"cashAccount\": 80000000.0\r\n}",
+					"raw": "{\r\n    \"name\": \"Barcelona\",\r\n    \"commission\": 8,\r\n    \"cashAccount\": 120000000.0\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -221,7 +222,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/teams/402880ed8509bfc5018509c02f480006",
+					"raw": "http://localhost:8080/teams/402880ed852744a00185274513df0006",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -229,7 +230,7 @@
 					"port": "8080",
 					"path": [
 						"teams",
-						"402880ed8509bfc5018509c02f480006"
+						"402880ed852744a00185274513df0006"
 					]
 				}
 			},
@@ -241,7 +242,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/footballPlayers/402880ed8509fd7c018509ff73b00001",
+					"raw": "http://localhost:8080/footballPlayers/402880ed85276a860185276b3d750002",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -249,7 +250,7 @@
 					"port": "8080",
 					"path": [
 						"footballPlayers",
-						"402880ed8509fd7c018509ff73b00001"
+						"402880ed85276a860185276b3d750002"
 					]
 				}
 			},
@@ -261,7 +262,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/teams/402880ed8509bfc5018509c02f480006",
+					"raw": "http://localhost:8080/teams/402880ed8527cf04018527cf124c0000",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -269,7 +270,7 @@
 					"port": "8080",
 					"path": [
 						"teams",
-						"402880ed8509bfc5018509c02f480006"
+						"402880ed8527cf04018527cf124c0000"
 					]
 				}
 			},
