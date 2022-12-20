@@ -2,6 +2,8 @@ package com.codeseek.footballmanager.service;
 
 import com.codeseek.footballmanager.dto.TeamDTO;
 import com.codeseek.footballmanager.dto.TransferFootballPlayerDTO;
+import com.codeseek.footballmanager.exception.EntityNotExistsException;
+import com.codeseek.footballmanager.exception.TransferException;
 import com.codeseek.footballmanager.model.FootballPlayer;
 import com.codeseek.footballmanager.model.Team;
 import com.codeseek.footballmanager.repository.FootballPlayerRepository;
@@ -44,7 +46,7 @@ public class TeamService {
 
     public Team getTeamById(String id) {
         return teamRepository.findById(id).orElseThrow(() ->
-                new IllegalStateException("Team with id:" + id + " not found"));
+                new EntityNotExistsException("Team with id:" + id + " not found"));
     }
 
     public Team updateTeam(TeamDTO teamDTO, String id) {
@@ -53,13 +55,13 @@ public class TeamService {
                     BeanUtils.copyProperties(teamDTO, team, getNullPropertyNames(teamDTO));
                     return teamRepository.save(team);
                 }).orElseThrow(() ->
-                        new IllegalStateException("Team is not exists"));
+                        new EntityNotExistsException("Team is not exists"));
     }
 
     @PreRemove
-    public void deleteTeam(String id) {
+    public void deleteTeam(String id){
         Team team = teamRepository.findById(id).orElseThrow(()->
-                new IllegalStateException("Team is not exists"));
+                new EntityNotExistsException("Team is not exists"));
         team.getTeamMembers().forEach((member)->{
             member.setTeam(null);
         });
@@ -73,18 +75,18 @@ public class TeamService {
     public void buyFootballPlayer(TransferFootballPlayerDTO transferFootballPlayerDTO) {
         FootballPlayer footballPlayer = footballPlayerRepository.findById(
                 transferFootballPlayerDTO.getFootballPlayerId()).orElseThrow(() ->
-                new IllegalStateException("Football player not found"));
+                new EntityNotExistsException("Football player not found"));
 
         Team buyingTeam = teamRepository.findById(transferFootballPlayerDTO.getBuyingTeamId()).orElseThrow(() ->
-                new IllegalStateException("Team not found"));
+                new EntityNotExistsException("Team not found"));
         Team salesTeam = footballPlayer.getTeam();
 
         if (salesTeam == null) {
-            throw new IllegalStateException("This football player does not belong to the team");
+            throw new TransferException("This football player does not belong to the team");
         }
 
         if (footballPlayer.getTeam().equals(buyingTeam)) {
-            throw new IllegalStateException("This football player is already on your team");
+            throw new TransferException("This football player is already on your team");
         }
 
         double footballPlayerPrice = footballPlayer.getMonthsOfExperience() * 100000 / footballPlayer.getAge();
@@ -100,7 +102,7 @@ public class TeamService {
             teamRepository.saveAll(List.of(buyingTeam, salesTeam));
             footballPlayerRepository.save(footballPlayer);
         } else {
-            throw new IllegalStateException("Insufficient funds to purchase a player");
+            throw new TransferException("Insufficient funds to purchase a player");
         }
     }
 }

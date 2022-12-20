@@ -1,6 +1,7 @@
 package com.codeseek.footballmanager.service;
 
 import com.codeseek.footballmanager.dto.FootballPlayerDTO;
+import com.codeseek.footballmanager.exception.EntityNotExistsException;
 import com.codeseek.footballmanager.helper.NullPropertyFinder;
 import com.codeseek.footballmanager.model.FootballPlayer;
 import com.codeseek.footballmanager.model.Team;
@@ -43,7 +44,7 @@ public class FootballPlayerService {
 
     public FootballPlayer getFootballPlayerById(String id) {
         return footballPlayerRepository.findById(id).orElseThrow(()->
-                new IllegalStateException("Football player with id:" + id + " not found"));
+                new EntityNotExistsException("Football player with id:" + id + " not found"));
     }
 
     public FootballPlayer updateFootballPlayer(FootballPlayerDTO footballPlayerDTO, String id) {
@@ -53,13 +54,13 @@ public class FootballPlayerService {
                     footballPlayer.setTeam(getTeamById(footballPlayerDTO.getTeamId()));
                     return footballPlayerRepository.save(footballPlayer);
                 }).orElseThrow(()->
-                        new IllegalStateException("Football player is not exists"));
+                        new EntityNotExistsException("Football player is not exists"));
     }
 
     private Team getTeamById(String id){
     return  teamRepository.findById(id)
         .orElseThrow(() ->
-                new IllegalStateException("Team with id:" + id + " not found"));
+                new EntityNotExistsException("Team with id:" + id + " not found"));
     }
 
     @Transactional
