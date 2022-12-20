@@ -64,13 +64,6 @@ public class FootballPlayerService {
 
     @Transactional
     public void deleteFootballPlayer(String id) {
-        FootballPlayer footballPlayer = footballPlayerRepository.findById(id).orElseThrow(()->
-                new IllegalStateException("Football player is not exists"));
-
-        footballPlayer.setTeam(null);
-
-        footballPlayerRepository.save(footballPlayer);
-
         footballPlayerRepository.deleteById(id);
     }
 }

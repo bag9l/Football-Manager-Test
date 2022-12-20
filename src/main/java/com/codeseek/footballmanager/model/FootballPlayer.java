@@ -39,7 +39,7 @@ public class FootballPlayer {
     private LocalDate dateOfBecomingProfessionalFootballPlayer;
 
     @JsonIgnore
-    @ManyToOne(cascade = {
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {
             CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH
     })
     @JoinColumn(name = "team_id")
