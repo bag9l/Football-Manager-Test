@@ -17,18 +17,18 @@ public class FootballPlayerDTO {
 
     private String id;
 
-    @NotNull
+    @NotNull(message = "must not be null")
     @NameConstraint
     private String firstname;
 
-    @NotNull
+    @NotNull(message = "must not be null")
     @NameConstraint
     private String lastname;
 
-    @NotNull
+    @NotNull(message = "must not be null")
     private LocalDate dateOfBirth;
 
-    @NotNull
+    @NotNull(message = "must not be null")
     private LocalDate dateOfBecomingProfessionalFootballPlayer;
 
     private String teamId;

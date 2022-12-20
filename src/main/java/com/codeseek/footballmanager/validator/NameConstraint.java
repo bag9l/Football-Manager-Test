@@ -10,7 +10,7 @@ import java.lang.annotation.*;
 @Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface NameConstraint {
-    String message() default "Name must contain only letters";
+    String message() default "must contain only letters";
 
     Class<?>[] groups() default {};
 

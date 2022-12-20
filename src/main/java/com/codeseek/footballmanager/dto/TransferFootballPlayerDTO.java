@@ -11,9 +11,9 @@ import lombok.*;
 @AllArgsConstructor
 public class TransferFootballPlayerDTO {
 
-    @NotNull
+    @NotNull(message = "must not be null")
     private String footballPlayerId;
 
-    @NotNull
+    @NotNull(message = "must not be null")
     private String buyingTeamId;
 }
