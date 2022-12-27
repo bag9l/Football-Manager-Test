@@ -28,7 +28,7 @@ public class TeamDTO {
     @NotNull(message = "must not be null")
     @Min(value = 0, message = "must be bigger or equals to 0")
     @Max(value = 10, message = "must be less or equals to 10")
-    private Byte commission;
+    private Double commission;
 
     @NotNull(message = "must not be null")
     private BigDecimal cashAccount;

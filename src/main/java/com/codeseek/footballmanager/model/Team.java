@@ -25,7 +25,7 @@ public class Team {
     @Column(name = "`name`")
     private String name;
 
-    private Byte commission;
+    private Double commission;
 
     @Column(name = "`cash account`")
     private BigDecimal cashAccount;

@@ -107,7 +107,7 @@ public class TeamServiceImpl implements TeamService {
         }
     }
 
-    private double calculateTransferPrice(int monthsOfExperience, int footballPlayerAge, byte teamCommission) {
+    private double calculateTransferPrice(int monthsOfExperience, int footballPlayerAge, double teamCommission) {
         double footballPlayerPrice = monthsOfExperience * 100_000 / footballPlayerAge;
         double commission = teamCommission / 100 * footballPlayerPrice;
         return footballPlayerPrice + commission;
