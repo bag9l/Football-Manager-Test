@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("teams")
+@RequestMapping("api/v1/teams")
 public class TeamController {
 
     private final TeamService teamService;
@@ -55,7 +55,7 @@ public class TeamController {
     }
 
     @PostMapping("{id}/buyFootballPlayer")
-    public ResponseEntity<Void> buyFootballPlayer(@RequestBody @Valid TransferFootballPlayerDTO transferFootballPlayerDTO, @PathVariable("id") String id){
+    public ResponseEntity<Void> buyFootballPlayer(@RequestBody @Valid TransferFootballPlayerDTO transferFootballPlayerDTO, @PathVariable("id") String id) {
         transferFootballPlayerDTO.setBuyingTeamId(id);
         teamService.buyFootballPlayer(transferFootballPlayerDTO);
         return ResponseEntity.status(HttpStatus.OK).build();
