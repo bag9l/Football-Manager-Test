@@ -21,13 +21,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/teams/create",
+					"raw": "http://localhost:8080/api/v1/teams/create",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
+						"v1",
 						"teams",
 						"create"
 					]
@@ -50,13 +52,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/teams/create",
+					"raw": "http://localhost:8080/api/v1/teams/create",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
+						"v1",
 						"teams",
 						"create"
 					]
@@ -71,7 +75,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " {\r\n    \"firstname\": \"Leonel\",\r\n    \"lastname\": \"Messi\",\r\n    \"dateOfBirth\": \"1995-03-07\",\r\n    \"dateOfBecomingProfessionalFootballPlayer\": \"2010-05-10\",\r\n    \"teamId\": \"402880ed8509bfc5018509c02f480006\"\r\n}",
+					"raw": " {\r\n    \"firstname\": \"Leonel\",\r\n    \"lastname\": \"Messi\",\r\n    \"dateOfBirth\": \"1995-03-07\",\r\n    \"dateOfBecomingProfessionalFootballPlayer\": \"2010-05-10\",\r\n    \"teamId\": \"402880ed85276a860185276b3d590000\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -79,13 +83,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/footballPlayers/create",
+					"raw": "http://localhost:8080/api/v1/footballPlayers/create",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
+						"v1",
 						"footballPlayers",
 						"create"
 					]
@@ -118,14 +124,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/players",
+					"raw": "http://localhost:8080/api/v1/footballPlayers",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"players"
+						"api",
+						"v1",
+						"footballPlayers"
 					]
 				}
 			},
@@ -144,15 +152,17 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/team/402880ed8509bfc5018509bff3060000",
+					"raw": "http://localhost:8080/api/v1/teams/402880ed85276a860185276b3d590000",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"team",
-						"402880ed8509bfc5018509bff3060000"
+						"api",
+						"v1",
+						"teams",
+						"402880ed85276a860185276b3d590000"
 					]
 				}
 			},
@@ -164,15 +174,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/footballPlayers/402880ed850a71e301850a72324b0000",
+					"raw": "http://localhost:8080/api/v1/footballPlayers/402880ed85276a860185276b8517000c",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
+						"v1",
 						"footballPlayers",
-						"402880ed850a71e301850a72324b0000"
+						"402880ed85276a860185276b8517000c"
 					]
 				}
 			},
@@ -185,7 +197,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " {\r\n    \"firstname\": \"Cristiano\",\r\n    \"lastname\": \"Ronaldo\",\r\n    \"dateOfBirth\": \"1995-03-07\",\r\n    \"dateOfBecomingProfessionalFootballPlayer\": \"2010-05-10\"\r\n}",
+					"raw": " {\r\n    \"firstname\": \"Cristiano\",\r\n    \"lastname\": \"Ronaldo\",\r\n    \"dateOfBirth\": \"1995-03-07\",\r\n    \"dateOfBecomingProfessionalFootballPlayer\": \"2010-05-10\",\r\n    \"teamId\": \"402880ed85276a860185276b3d590000\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -193,13 +205,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/footballPlayers/402880ed85276a860185276b3d740001",
+					"raw": "http://localhost:8080/api/v1/footballPlayers/402880ed85276a860185276b3d740001",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
+						"v1",
 						"footballPlayers",
 						"402880ed85276a860185276b3d740001"
 					]
@@ -214,7 +228,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Barcelona\",\r\n    \"commission\": 8,\r\n    \"cashAccount\": 120000000.0\r\n}",
+					"raw": "{\r\n   \"name\": \"Argentina\",\r\n    \"commission\": 7,\r\n    \"cashAccount\": 120000000.0\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -222,15 +236,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/teams/402880ed852744a00185274513df0006",
+					"raw": "http://localhost:8080/api/v1/teams/2c948a828530d4a6018530d50f000000",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
+						"v1",
 						"teams",
-						"402880ed852744a00185274513df0006"
+						"2c948a828530d4a6018530d50f000000"
 					]
 				}
 			},
@@ -242,15 +258,17 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/footballPlayers/402880ed85276a860185276b3d750002",
+					"raw": "http://localhost:8080/api/v1/footballPlayers/402880ed852edc7901852edccf540003",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
+						"v1",
 						"footballPlayers",
-						"402880ed85276a860185276b3d750002"
+						"402880ed852edc7901852edccf540003"
 					]
 				}
 			},
@@ -262,15 +280,17 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/teams/402880ed8527cf04018527cf124c0000",
+					"raw": "http://localhost:8080/api/v1/teams/402880ed852edc7901852edccf1f0000",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
+						"v1",
 						"teams",
-						"402880ed8527cf04018527cf124c0000"
+						"402880ed852edc7901852edccf1f0000"
 					]
 				}
 			},
@@ -291,13 +311,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/teams/402880ed8509bfc5018509c02f480006/buyFootballPlayer",
+					"raw": "http://localhost:8080/api/v1/teams/402880ed8509bfc5018509c02f480006/buyFootballPlayer",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
+						"v1",
 						"teams",
 						"402880ed8509bfc5018509c02f480006",
 						"buyFootballPlayer"
